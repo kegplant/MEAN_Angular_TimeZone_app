@@ -1,0 +1,13 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+
+  <h2>US Time Zone Display</h2>
+  <!-- <button (click)="changeTimeZone('PST')" [ngClass]="{'on':status['PST']}">PST</button>
+  <button (click)="changeTimeZone('MST')" [ngClass]="{'on':status['MST']}">MST</button>
+  <button (click)="changeTimeZone('CST')" [ngClass]="{'on':status['CST']}">CST</button> -->
+  <!-- <button (click)="changeTimeZone('EST')" [ngClass]="{'on':status['EST']}">EST</button> -->
+  <button *ngFor="let zone1 of zones" (click)='changeTimeZone(zone1)' [ngClass]="{'on':status[zone1]}">{{zone1}}</button>
+  <button (click)="clearTime()">Clear</button>
+  <p *ngIf='isVisible'>{{today|date:'medium':zone}}</p>
+  <!-- <p>{{status|json}}</p> -->
+</div>
